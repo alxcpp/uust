@@ -10,24 +10,21 @@
 - 📱 Адаптивный дизайн для всех устройств
 - ⚡ Быстрая работа без серверной части
 
-## Запуск
+## Запуск через Docker Compose
 
-Просто откройте файл `index.html` в любом современном браузере.
-
-Или запустите локальный сервер:
+Установите Docker с поддержкой Compose, затем из каталога проекта выполните:
 
 ```bash
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-
-# Node.js (если установлен http-server)
-npx http-server
+docker compose up --build -d
 ```
 
-Затем откройте http://localhost:8000 в браузере.
+Сайт будет доступен по адресу http://localhost:8080. Чтобы остановить его:
+
+```bash
+docker compose down
+```
+
+Для быстрого просмотра без Docker можно открыть `index.html` в браузере.
 
 ## Технологии
 
@@ -38,6 +35,8 @@ npx http-server
 ## Структура
 
 - `index.html` - основной файл сайта, содержит всю разметку, стили и скрипты
+- `Dockerfile` - образ Nginx для раздачи сайта
+- `compose.yaml` - конфигурация Docker Compose
 
 ## Данные о мероприятиях
 
